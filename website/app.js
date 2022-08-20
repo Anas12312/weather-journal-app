@@ -34,7 +34,6 @@ const getData = async(url = '') => {
     const res = await fetch(url);
     try{
         const data = await res.json();
-        console.log(data);
         return data.main.temp;
     }catch(error) {
         console.log(`error happend:\n${error}`);
@@ -51,7 +50,6 @@ const post = async ( url = '', data = {})=>{
         },
         body: JSON.stringify(data),      
     });
-    console.log(response.json())
     try{
         const newData = await response.json();
         return newData
